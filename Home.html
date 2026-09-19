@@ -1,0 +1,157 @@
+<html>
+ 
+  <body>
+    
+    <a id="SideBar">
+      <span>
+        <button id="Exit" onclick="window.open('https://sites.google.com/studentswcsoh.org/edu/home', '_blank');">
+      Home
+    </button>
+        <select id="udmSelect" onchange="updateContent(this.value)">
+          <option value="0">Lesson...</option>
+          <option value="1">S.B.1</option>
+          <option value="2">S.B.2</option>
+          <option value="3">S.B.3</option>
+          <option value="4">S.F&E.1</option>
+          <option value="5">S.F&E.2</option>
+          <option value="6">S.F&E.3</option>
+</select>
+      </span>
+      
+    </a>
+    <a id="MainText">
+      
+    </a>
+    <a id="TextTitle">
+      <h3> WIP Website </h3>
+      Select your lesson on the left
+    </a>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/3840px-Icon-round-Question_mark.svg.png" id="Image">
+    <button id="YTVideo" onclick="window.open('https://youtube.com', '_blank');">
+      Youtube
+    </button>
+    <button id="Quiz" onclick="window.location.href='https://youtube.com';">
+      Not working button
+    </button>
+    <style>
+      body {
+        font-family: Verdana;
+        background: linear-gradient(0deg, royalblue, white);
+        
+      }
+      
+      #SideBar {
+        background-color: blue;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 5%;
+        height: 100%;
+        border-radius: 5%;
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+       #SideBar {
+        display: inline-block;
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      #SideBar:hover {
+        transform: scaleX(1.5);
+      }
+
+      
+      #SideBar:hover > * {
+        transition: transform 0.3s ease, scale 0.3s ease;
+        display: inline-block;
+        transform: scaleY(1.5);
+        
+        transform-origin: left;
+      }
+      #Exit {
+        background-color: blue;
+        height: 5%;
+        width: 100%;
+        border-radius: 5%;
+      }
+      #udmSelect {
+        background-color: blue;
+        height: 5%;
+        width: 100%;
+        border-radius: 5%;
+      }
+      #MainText {
+        background-color: lightgray;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        width: 60%;
+        height: 80%;
+        border-radius: 5%;
+        
+  font-size: clamp(0.5rem, 2cqw, 1rem);
+
+      }
+      #TextTitle {
+        font-size: clamp(0.6rem, 1.5cqw, 1rem);
+        background-color: #eeeeee;
+        position: absolute;
+        top: 0%;
+        left: 10%;
+        width: 60%;
+        height: 18%;
+        border-radius: 5%;
+        
+      }
+      #Image {
+        background-color: #eeeeee;
+        position: absolute;
+        top: 10%;
+        left: 75%;
+        width: 20%;
+        height: 20%;
+        border-radius: 5%;
+        
+      }
+      #YTVideo {
+        position: absolute;
+        top: 50%;
+        left: 75%;
+        width: 20%;
+        height: 10%;
+        border-radius: 10%;
+        background: linear-gradient(0deg, blue, lightblue)
+      }
+      #Quiz {
+        position: absolute;
+        top: 80%;
+        left: 75%;
+        width: 20%;
+        height: 10%;
+        border-radius: 10%;
+        background: linear-gradient(0deg, lightblue, blue)
+      }
+    </style>
+    
+
+<script>
+  function updateContent(val) {
+    const mainText = document.getElementById('MainText');
+    const Title = document.getElementById('TextTitle');
+    const contentMap = {
+      '0': {'1' :'<h3> WIP Website </h3> Select your lesson on the left', '2': '', '3': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/3840px-Icon-round-Question_mark.svg.png'} ,
+      '1': {'1' :'<h3> Scripting/Basics/ScriptTypes </h3> Learn the diffrent types of scripts and how they apply', '2': 'When you start scripting you are going to need a script. But how do you choose the right one? Well there are 3 diffrent types of scripts,<ul> <li>Script, <li>Local script, <li>and module script</li> </ul>. To choose which one deppends on what you want to acchive if it is something you want every player to see then you should use a script, if only for 1 player use a local script, andd lastly if you want some variables or functions you can use or edit from anyway think about using a module script. Some examples include If you want to make a platform that one one player can see and interact with then use a local script, if you want to make a function that will be called a lot of times then consider using a module script. You should almost always use a regular script unless another one is better for that specific task.', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
+      '2': {'1' :'<h3> Scripting/Basics/Reference objs </h3> Learn how to refrence objs in scripts', '2': 'When you open your script by clicking it twice you are greeted with [print("hello world")]. For the sake of this tutorial we are going to delete that, anyway, one of top 3 most important things is OBJ REFERENCING, how do we do that? in three diffrent ways (Of starting it)! Firstly: [game] this is what holds everything. Next: [Workspace] this is a child to game and can also be called from [game.workspace]. Lastly, [script] which is the MOST common start point for an object reference. As you may have seen you can refer to a child by putting a [.] then its name but you can also get the parent by doing [.Parent]. When you type these in to the editer (i hope that is what you are doing right now) its going to say that there is an error but we are going to fix that next lesson!', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
+      '3': {'1' :'<h3> Scripting/Basics/Propertys </h3> Learn how to edit propertys in scripts', '2': 'After we have typed, uh, lets say [script.Parent] we get an error saying that nothing is happening thats because every line in luau needs to call an event, change a value, call a function, or define a variable. So for this tutorial we are going to edit a property. to refrence a property is much the same as referencing a child but instead we do something like [Script.Parent.()] () being any property. A global property is parrent so lets edit that. First make a part then put another part in that part and put the script in that last part. Now in that script write [script.Parent.Parent = workspace]. now when you run the script or start the game the part that was in another part is now in the workspace. If you want something more visable you can edit the Transparency through the script too, [script.Parent.Transparency = 0.5] ', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
+      '4': {'1' :'<h3> Scripting/Functions&Events/Built-In </h3> Learn some built in functions, what they do, peremeters, and how to call a function', '2': 'For this lesson we are going to need another script, because we are going to address the elephant in the room [print("Hello World!")]. This is a built in function which will send a message to the output, btw if you havent already open up the console. Some more built in fuctions are [warn()], [task.spawn()], and [task.wait()]. To call a function you need to put its name and then a () right after to show that you are calling it and not referncing it. Some functions, like print, require a peremeter, which is a value that goes between the () in the function if you didnt put anything in there then how would the print function know what to print?.', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
+      '5': {'1' :'<h3> Scripting/Functions&Events/Functions </h3> Learn to create and call your own function.', '2': 'But sometimes built in functions arnt going to be able to do everything you want, this is where we start to make our own. To define our function we will do Line 1: [Local function NameOfFunc(peremeters)], L3: [end]. Most coding languges dont need an end after a function but for luau it will. Now what do we put in our function? well say we wanted a function to be able to set the transpancy of a part to a specific value, well what value? We have to give our functions some peremeters so that we know what value to set the transparcy to, and the part to set it to , L1: [Local function NameOfFunc(Part, Transpancy)]. Now we have two values we can use! Now all we do now to make the function work is L2: [Part.Transpancy = Transpancy]. Now to call the function we just need to do L4: [NameOfFunc(Script.Parent, 0.5)], and it will work (If the script is inside a part).', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
+      '6': {'1' :'<h3> Scripting/Functions&Events/Events </h3> Learn what events are and their use cases.', '2': 'Events are an alert that can be atached to any obj to send a signal to a script run a fuction. Here is an example. L1: [script.Parent.Touched:Connect(function <> end)], <> being any lines or fuctions you want to run when the objs event is called., ', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
+    };
+    mainText.innerHTML = contentMap[val][2] || 'No Text was found';
+    Title.innerHTML = contentMap[val][1] || 'No Text was found';
+    document.getElementById('Image').src = contentMap[val][3] || 'Question.png'
+  }
+</script>
+  </body>
+</html>
