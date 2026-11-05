@@ -1,7 +1,5 @@
 <html>
- <title>
-   Learn Roblox!
- </title>
+ 
   <body>
     
     <a id="SideBar">
@@ -10,13 +8,15 @@
       Home
     </button>
         <select id="udmSelect" onchange="updateContent(this.value)">
-          <option value="0">Lesson...</option>
+          <option value="0">Select Option...</option>
           <option value="1">S.B.1</option>
           <option value="2">S.B.2</option>
           <option value="3">S.B.3</option>
           <option value="4">S.F&E.1</option>
           <option value="5">S.F&E.2</option>
           <option value="6">S.F&E.3</option>
+          <option value="7">S.V&L.1</option>
+          <option value="8">S.V&L.2</option>
 </select>
       </span>
       
@@ -30,10 +30,10 @@
     </a>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/3840px-Icon-round-Question_mark.svg.png" id="Image">
     <button id="YTVideo" onclick="window.open('https://youtube.com', '_blank');">
-      Youtube
+      Youtube Video
     </button>
     <button id="Quiz" onclick="window.location.href='https://youtube.com';">
-      Not working button
+      Quiz
     </button>
     <style>
       body {
@@ -147,8 +147,9 @@
       '2': {'1' :'<h3> Scripting/Basics/Reference objs </h3> Learn how to refrence objs in scripts', '2': 'When you open your script by clicking it twice you are greeted with [print("hello world")]. For the sake of this tutorial we are going to delete that, anyway, one of top 3 most important things is OBJ REFERENCING, how do we do that? in three diffrent ways (Of starting it)! Firstly: [game] this is what holds everything. Next: [Workspace] this is a child to game and can also be called from [game.workspace]. Lastly, [script] which is the MOST common start point for an object reference. As you may have seen you can refer to a child by putting a [.] then its name but you can also get the parent by doing [.Parent]. When you type these in to the editer (i hope that is what you are doing right now) its going to say that there is an error but we are going to fix that next lesson!', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
       '3': {'1' :'<h3> Scripting/Basics/Propertys </h3> Learn how to edit propertys in scripts', '2': 'After we have typed, uh, lets say [script.Parent] we get an error saying that nothing is happening thats because every line in luau needs to call an event, change a value, call a function, or define a variable. So for this tutorial we are going to edit a property. to refrence a property is much the same as referencing a child but instead we do something like [Script.Parent.()] () being any property. A global property is parrent so lets edit that. First make a part then put another part in that part and put the script in that last part. Now in that script write [script.Parent.Parent = workspace]. now when you run the script or start the game the part that was in another part is now in the workspace. If you want something more visable you can edit the Transparency through the script too, [script.Parent.Transparency = 0.5] ', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
       '4': {'1' :'<h3> Scripting/Functions&Events/Built-In </h3> Learn some built in functions, what they do, peremeters, and how to call a function', '2': 'For this lesson we are going to need another script, because we are going to address the elephant in the room [print("Hello World!")]. This is a built in function which will send a message to the output, btw if you havent already open up the console. Some more built in fuctions are [warn()], [task.spawn()], and [task.wait()]. To call a function you need to put its name and then a () right after to show that you are calling it and not referncing it. Some functions, like print, require a peremeter, which is a value that goes between the () in the function if you didnt put anything in there then how would the print function know what to print?.', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
-      '5': {'1' :'<h3> Scripting/Functions&Events/Functions </h3> Learn to create and call your own function.', '2': 'But sometimes built in functions arnt going to be able to do everything you want, this is where we start to make our own. To define our function we will do Line 1: [Local function NameOfFunc(peremeters)], L3: [end]. Most coding languges dont need an end after a function but for luau it will. Now what do we put in our function? well say we wanted a function to be able to set the transpancy of a part to a specific value, well what value? We have to give our functions some peremeters so that we know what value to set the transparcy to, and the part to set it to , L1: [Local function NameOfFunc(Part, Transpancy)]. Now we have two values we can use! Now all we do now to make the function work is L2: [Part.Transpancy = Transpancy]. Now to call the function we just need to do L4: [NameOfFunc(Script.Parent, 0.5)], and it will work (If the script is inside a part).', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
-      '6': {'1' :'<h3> Scripting/Functions&Events/Events </h3> Learn what events are and their use cases.', '2': 'Events are an alert that can be atached to any obj to send a signal to a script run a fuction. Here is an example. L1: [script.Parent.Touched:Connect(function <> end)], <> being any lines or fuctions you want to run when the objs event is called., ', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
+      '5': {'1' :'<h3> Scripting/Functions&Events/Functions </h3> Learn to create and call your own function.', '2': 'But sometimes built in functions arnt going to be able to do everything you want, this is where we start to make our own. To define our function we will do Line 1: [Local function NameOfFunc(peremeters)], L3: [end]. Most coding languges dont need an end after a function but for luau it will. Now what do we put in our function? well say we wanted a function to be able to set the transpancy of a part to a specific value, well what value? We have to give our functions some peremeters so that we know what value to set the transparcy to, and the part to set it to , L1: [Local function NameOfFunc(Part, Transpancy)]. Now we have two values we can use! Now all we do now to make the function work is L2: [Part.Transpancy = Transpancy]', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},   '6': {'1' :'<h3> Scripting/Functions&Events/Events</h3> Learn to trigger code on an Event.', '2': 'Those functions either tigger instantly or on a delay but what if you wanted to run code on an action? Events help us do just that. Events are written like L1: [TargetIntance.EventName:Connect(function(Peremeters) <> end)] <> being any code to run. An example of this could be L1: [ Script.Parent.Touched:Connect(function(PartThatTouched) ], L2: [ PartThatTouched.Transpancy = 0.5 ], L3: [ end) ]. That script would make any part that touches it, slightly transparent. A lot of diffrent events exist so be sure to use the auto-correct and look for a lightning bolt icon to find an event.', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
+         '7': {'1' :'<h3> Scripting/Variables&Loops/Variables</h3> Learn Variables and how to use/edit them', '2': 'Variables are just that, they can be any type of data. Variables are writen like, L1: [Local VarName = Data]. Variables allow you to use the same value over and over and be easily able to change it. An example would be, L1: [ Local Part = Script.Parent], L2: [Part.Transpancy = 0.5], L3: [Part = Script], L4 : [ Part:Destroy() ]. Waht that script would do is first, Set variable Part to The parent of this script, then, set the Part transpancy to half, then set varible part to this script which we dont need [Local] for because it was already defined, Lastly, destroy Variable Part, which is now this script (NOT BEST EXAMPLE WILL IMPROVE LATER). Now that we are on the topic of data, here are some data types: Number, String, Table, Instance, and Boolegen.', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
+      '8': {'1' :'<h3> Scripting/Variables&Loops/Simple Loops</h3> Learn Loops and their functionalitys', '2': 'While, repeat until', '3' :'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original'},
     };
     mainText.innerHTML = contentMap[val][2] || 'No Text was found';
     Title.innerHTML = contentMap[val][1] || 'No Text was found';
